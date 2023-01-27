@@ -13,7 +13,6 @@ export default{
     },
     methods: {
         convert(data){
-            // element.trim() != '' ? element.trim().split(" ").length : 0
 
             this.message = ""
             console.log(data);
