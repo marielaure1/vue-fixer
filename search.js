@@ -15,7 +15,7 @@ export default {
 
             <form>
                 <div>
-                    <label for="from">From</label>
+                    <label for="from">Choisissez une devise</label>
                     <select name="from" id="from" v-model="from">
                     <option :value="key" v-for="(devise, key) in devises">{{ key }}</option>
                     </select>
@@ -23,9 +23,9 @@ export default {
                 </div>
         
                 <div>
-                    <label for="to">To</label>
+                    <label for="to">Choisissez une devise</label>
                     <select name="to" id="to" v-model="to">
-                        <option value="all" selected>All</option>
+                        <option value="all" >All</option>
                         <option :value="key" v-for="(devise, key) in devises">{{ key }}</option>
                     </select>
                 </div>
