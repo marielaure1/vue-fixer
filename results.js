@@ -15,12 +15,14 @@ export default{
         convert(data){
 
             this.message = ""
+            this.resultat = ""
+
             console.log(data);
 
             if(data.amount == "" || data.from == ""){
                 return this.message = "Vous devez remplir tous les champs"
             } else if(data.from == data.to){
-                return this.message = "La devise from doit être differente de la devise to"
+                return this.message = "Les deux devises doivent être differente"
             } else if(data.to == "" || data.to == "all"){
                 fetch(`https://api.frankfurter.app/latest?amount=${ data.amount}&from=${ data.from}`)
                 .then(response => response.json())
@@ -46,7 +48,7 @@ export default{
 
         <p class="error">{{ message }}</p>
 
-        <ul>
+        <ul class="list-results">
             <li v-for="(rate, key) in resultat.rates">{{ key }}: {{ rate }}</li>
         </ul>
         
